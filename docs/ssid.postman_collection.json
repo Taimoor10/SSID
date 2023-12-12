@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "1a97a119-bb10-400e-8f20-199b033f2d2b",
+		"name": "ssid",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "validate request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MHgxYWQxNTlmNDI5NDM0NjZlNzE4NGE4YWI1NjI1MTc5MTdiYTg2NjU5ZjNjZWNhNDllMjczNDEwNGQwOGEyYTU5MHgzMWJhOWJiMzAwYjc1YzU2ZDgxZWNiZDQwOTRjYjAzMGM1MzA1OTViYTRiMDI0NjQxZGMwMDYyNmVhYzViNTlhNDQ3MzZjMGM5Njk5ZWZlN2E0ZDNkNGQxNzYzNTgwYWRmZjM4YTY4YzgyMzdmYTE2MzRkMmE2YWJkNmYzMGU2OTBjYzZiNmQ4OTcwMzJiZjJiYmZjMmQ3Nzc0ZGU2Mjk2ZDEwNTVhMzQ4Y2M1MDkxYTM0OTA4NDEwY2YyZjI2YjBmOTg2NmJhZDkxOWI1MGM2OTBhZTg3NWQwZmNmZGFhMzFkYzY4NGIxMWExYTE1YWZhZWM4NDQyYzUzZDUzNjZmNmYyYWYxM2I3NThiNzdkNjFlZDk2ODIzOTViMWZhYmI1Mjk1NmRmOGNlZjA4NDA1YWNiNzk1N2FmMWRlNzA3NGYwZjBmOTUxYTkxMTI4OTE1N2ZkNWE1Nw==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"0xac942e57\",\n    \"property\": \"john.doe@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/authentication/request/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authentication",
+								"request",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MHgxYWQxNTlmNDI5NDM0NjZlNzE4NGE4YWI1NjI1MTc5MTdiYTg2NjU5ZjNjZWNhNDllMjczNDEwNGQwOGEyYTU5MHgzMWJhOWJiMzAwYjc1YzU2ZDgxZWNiZDQwOTRjYjAzMGM1MzA1OTViYTRiMDI0NjQxZGMwMDYyNmVhYzViNTlhNDQ3MzZjMGM5Njk5ZWZlN2E0ZDNkNGQxNzYzNTgwYWRmZjM4YTY4YzgyMzdmYTE2MzRkMmE2YWJkNmYzMGU2OTBjYzZiNmQ4OTcwMzJiZjJiYmZjMmQ3Nzc0ZGU2Mjk2ZDEwNTVhMzQ4Y2M1MDkxYTM0OTA4NDEwY2YyZjI2YjBmOTg2NmJhZDkxOWI1MGM2OTBhZTg3NWQwZmNmZGFhMzFkYzY4NGIxMWExYTE1YWZhZWM4NDQyYzUzZDUzNjZmNmYyYWYxM2I3NThiNzdkNjFlZDk2ODIzOTViMWZhYmI1Mjk1NmRmOGNlZjA4NDA1YWNiNzk1N2FmMWRlNzA3NGYwZjBmOTUxYTkxMTI4OTE1N2ZkNWE1Nw==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"property\": \"john.doe@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "is",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/is?property=john.doe@email.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"is"
+							],
+							"query": [
+								{
+									"key": "property",
+									"value": "john.doe@email.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/id?property=john.doe@email.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"id"
+							],
+							"query": [
+								{
+									"key": "property",
+									"value": "john.doe@email.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "certificate",
+			"item": [
+				{
+					"name": "has",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/certificate/has?address=0xB69aEc874cc75181aE386a3d7Db3f8B7e10f30e2&number=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"certificate",
+								"has"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "0xB69aEc874cc75181aE386a3d7Db3f8B7e10f30e2"
+								},
+								{
+									"key": "number",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "issue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MHg4MmJiZTFmY2EyYzlkZWExM2VmNDI0N2YwOWQyODE4ZTZkODA1MTVhY2QyODMzMzUzNWYwZmEwYTRmMjRkZTM4MHg1ZWE2NGY1Nzg5ZWI1ZjNhMjZmYjZmNzY2NDE4YjI4OTA0ZjY3MTQ2MDk3YzQ3OWQ3NmNjNTNmODUxYWYwOWYyNzczZjYwZWQ1MzgxOTQ0NWQzZjA1YmFlNmM2OGNhNGNjYmM4MGE3YWRlNzY1YjhjYTEwN2RhMTZhNzBlNjhhMzRhMjJjOWI3NDc2OTQ2OWJkYmExNDc1YjAyZDdhMDAwYTQwYjZhOGUzMWZmNjdlZTJkYjQwODBhMGNkYTBlZDdkZmNlOTc1OWFlZmQ2NmJiYmUzZGE4MzUwOGIzMWE3ZmY4ODBmOWFjMTA0OTI4MTRjYTc0ZGMxODE2OTQ5NzM4NDlmNWZmMjA4NDI4YzczYmM1NjU3ZDFhYzBhNDg4NjViMTI4MzQ3ODQ1ZGZiMDMwM2E1NGEzMzNjM2Q0NmYwZmJhN2Q3MTViY2E4ZWFkMTgxYjYwNjA3OQ======",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"0xB69aEc874cc75181aE386a3d7Db3f8B7e10f30e2\",\n    \"number\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/certificate/issue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"certificate",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "revoke",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MHg4MmJiZTFmY2EyYzlkZWExM2VmNDI0N2YwOWQyODE4ZTZkODA1MTVhY2QyODMzMzUzNWYwZmEwYTRmMjRkZTM4MHg1ZWE2NGY1Nzg5ZWI1ZjNhMjZmYjZmNzY2NDE4YjI4OTA0ZjY3MTQ2MDk3YzQ3OWQ3NmNjNTNmODUxYWYwOWYyNzczZjYwZWQ1MzgxOTQ0NWQzZjA1YmFlNmM2OGNhNGNjYmM4MGE3YWRlNzY1YjhjYTEwN2RhMTZhNzBlNjhhMzRhMjJjOWI3NDc2OTQ2OWJkYmExNDc1YjAyZDdhMDAwYTQwYjZhOGUzMWZmNjdlZTJkYjQwODBhMGNkYTBlZDdkZmNlOTc1OWFlZmQ2NmJiYmUzZGE4MzUwOGIzMWE3ZmY4ODBmOWFjMTA0OTI4MTRjYTc0ZGMxODE2OTQ5NzM4NDlmNWZmMjA4NDI4YzczYmM1NjU3ZDFhYzBhNDg4NjViMTI4MzQ3ODQ1ZGZiMDMwM2E1NGEzMzNjM2Q0NmYwZmJhN2Q3MTViY2E4ZWFkMTgxYjYwNjA3OQ======",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"0xB69aEc874cc75181aE386a3d7Db3f8B7e10f30e2\",\n    \"number\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/certificate/revoke",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"certificate",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

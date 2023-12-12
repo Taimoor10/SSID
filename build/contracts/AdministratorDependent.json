@@ -1,0 +1,902 @@
+{
+  "contractName": "AdministratorDependent",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract AdministratorProvider",
+          "name": "_administratorProvider",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "administratorProvider",
+      "outputs": [
+        {
+          "internalType": "contract AdministratorProvider",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract AdministratorProvider\",\"name\":\"_administratorProvider\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"administratorProvider\",\"outputs\":[{\"internalType\":\"contract AdministratorProvider\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorDependent.sol\":\"AdministratorDependent\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/muhammadtaimoor/Projects/ssid/contracts/Administrator.sol\":{\"keccak256\":\"0x3f7cae5912af2bd290fd4bf04a38e74580404f14293cacf49e73bf14614e291e\",\"urls\":[\"bzz-raw://970dff30b5f93a1035e3ab2b9605857a3b7c08ee4e918f02b933deba161bce30\",\"dweb:/ipfs/QmNnqr4tot4K1FsLjcLwkyKcAs4964CgwSVghtuJr8AP1a\"]},\"/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorDependent.sol\":{\"keccak256\":\"0xa72a864e63f8ebb7320e286f62fd43c73ed4de4eb5cd7ac802e30466ed169270\",\"urls\":[\"bzz-raw://344185e8d12bd7f9af2eb03940fd8da295520a1fbeab9ace6ac222bb7fceeb33\",\"dweb:/ipfs/QmYti7sXhrsjEG1EBopwtXxdcY7fDtPJHD9EHtbEqAtc7k\"]},\"/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorProvider.sol\":{\"keccak256\":\"0xd0c7723d70c1d00be53fd7cd39e72dcd953b4a15bd97a00e189c51d7dce5bef6\",\"urls\":[\"bzz-raw://158d97bfeaf3e2157fa012f9b302ab2ee2d37175d4868083fb7f31b658f8ae36\",\"dweb:/ipfs/QmVQHpEe9io2h5DSYkqGP5ynpaWYewa17XMTmV3cc49RPE\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516101623803806101628339818101604052602081101561003357600080fd5b8101908080519060200190929190505050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060cf806100936000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063fd0ae08314602d575b600080fd5b60336075565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820fd873ba8cd8c3394bb05224055302cfbe85f5686cd5ba97c051f62c0a824483164736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063fd0ae08314602d575b600080fd5b60336075565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820fd873ba8cd8c3394bb05224055302cfbe85f5686cd5ba97c051f62c0a824483164736f6c63430005100032",
+  "sourceMap": "75:420:1:-;;;174:128;8:9:-1;5:2;;;30:1;27;20:12;5:2;174:128:1;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;174:128:1;;;;;;;;;;;;;;;;273:22;249:21;;:46;;;;;;;;;;;;;;;;;;174:128;75:420;;;;;;",
+  "deployedSourceMap": "75:420:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;75:420:1;;;;;;;;;;;;;;;;;;;113:50;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >= 0.4.22 < 0.7.0;\n\nimport './AdministratorProvider.sol';\n\ncontract AdministratorDependent {\n    AdministratorProvider public administratorProvider;\n    \n    constructor(AdministratorProvider _administratorProvider) public {\n        administratorProvider = _administratorProvider;\n    }\n    \n    modifier onlyAdministrator(address _address) {\n        require(administratorProvider.administratorCollection().isAdministrator(msg.sender), 'Unauthorized Access!');\n        _;\n    }\n}",
+  "sourcePath": "/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorDependent.sol",
+  "ast": {
+    "absolutePath": "/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorDependent.sol",
+    "exportedSymbols": {
+      "AdministratorDependent": [
+        164
+      ]
+    },
+    "id": 165,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 133,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:34:1"
+      },
+      {
+        "absolutePath": "/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorProvider.sol",
+        "file": "./AdministratorProvider.sol",
+        "id": 134,
+        "nodeType": "ImportDirective",
+        "scope": 165,
+        "sourceUnit": 214,
+        "src": "36:37:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 164,
+        "linearizedBaseContracts": [
+          164
+        ],
+        "name": "AdministratorDependent",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 136,
+            "name": "administratorProvider",
+            "nodeType": "VariableDeclaration",
+            "scope": 164,
+            "src": "113:50:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+              "typeString": "contract AdministratorProvider"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 135,
+              "name": "AdministratorProvider",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 213,
+              "src": "113:21:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                "typeString": "contract AdministratorProvider"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 145,
+              "nodeType": "Block",
+              "src": "239:63:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 143,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 141,
+                      "name": "administratorProvider",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 136,
+                      "src": "249:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                        "typeString": "contract AdministratorProvider"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 142,
+                      "name": "_administratorProvider",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 138,
+                      "src": "273:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                        "typeString": "contract AdministratorProvider"
+                      }
+                    },
+                    "src": "249:46:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                      "typeString": "contract AdministratorProvider"
+                    }
+                  },
+                  "id": 144,
+                  "nodeType": "ExpressionStatement",
+                  "src": "249:46:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 146,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 139,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 138,
+                  "name": "_administratorProvider",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 146,
+                  "src": "186:44:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                    "typeString": "contract AdministratorProvider"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 137,
+                    "name": "AdministratorProvider",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 213,
+                    "src": "186:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                      "typeString": "contract AdministratorProvider"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "185:46:1"
+            },
+            "returnParameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "239:0:1"
+            },
+            "scope": 164,
+            "src": "174:128:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 162,
+              "nodeType": "Block",
+              "src": "357:136:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 155,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 913,
+                              "src": "439:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 156,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "439:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 151,
+                                "name": "administratorProvider",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 136,
+                                "src": "375:21:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                                  "typeString": "contract AdministratorProvider"
+                                }
+                              },
+                              "id": 152,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "administratorCollection",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 171,
+                              "src": "375:45:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_contract$_AdministratorInterface_$19_$",
+                                "typeString": "function () view external returns (contract AdministratorInterface)"
+                              }
+                            },
+                            "id": 153,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "375:47:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AdministratorInterface_$19",
+                              "typeString": "contract AdministratorInterface"
+                            }
+                          },
+                          "id": 154,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "isAdministrator",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 18,
+                          "src": "375:63:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 157,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "375:75:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "556e617574686f72697a65642041636365737321",
+                        "id": 158,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "452:22:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_760a1e64bec12b2abe45c38b6154155372bcdc8e8a725e7d20a01af9513a7e5a",
+                          "typeString": "literal_string \"Unauthorized Access!\""
+                        },
+                        "value": "Unauthorized Access!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_760a1e64bec12b2abe45c38b6154155372bcdc8e8a725e7d20a01af9513a7e5a",
+                          "typeString": "literal_string \"Unauthorized Access!\""
+                        }
+                      ],
+                      "id": 150,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        916,
+                        917
+                      ],
+                      "referencedDeclaration": 917,
+                      "src": "367:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 159,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "367:108:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 160,
+                  "nodeType": "ExpressionStatement",
+                  "src": "367:108:1"
+                },
+                {
+                  "id": 161,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "485:1:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 163,
+            "name": "onlyAdministrator",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 149,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 148,
+                  "name": "_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 163,
+                  "src": "339:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 147,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:18:1"
+            },
+            "src": "312:181:1",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 165,
+        "src": "75:420:1"
+      }
+    ],
+    "src": "0:495:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorDependent.sol",
+    "exportedSymbols": {
+      "AdministratorDependent": [
+        164
+      ]
+    },
+    "id": 165,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 133,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:34:1"
+      },
+      {
+        "absolutePath": "/Users/muhammadtaimoor/Projects/ssid/contracts/AdministratorProvider.sol",
+        "file": "./AdministratorProvider.sol",
+        "id": 134,
+        "nodeType": "ImportDirective",
+        "scope": 165,
+        "sourceUnit": 214,
+        "src": "36:37:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 164,
+        "linearizedBaseContracts": [
+          164
+        ],
+        "name": "AdministratorDependent",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 136,
+            "name": "administratorProvider",
+            "nodeType": "VariableDeclaration",
+            "scope": 164,
+            "src": "113:50:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+              "typeString": "contract AdministratorProvider"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 135,
+              "name": "AdministratorProvider",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 213,
+              "src": "113:21:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                "typeString": "contract AdministratorProvider"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 145,
+              "nodeType": "Block",
+              "src": "239:63:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 143,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 141,
+                      "name": "administratorProvider",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 136,
+                      "src": "249:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                        "typeString": "contract AdministratorProvider"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 142,
+                      "name": "_administratorProvider",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 138,
+                      "src": "273:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                        "typeString": "contract AdministratorProvider"
+                      }
+                    },
+                    "src": "249:46:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                      "typeString": "contract AdministratorProvider"
+                    }
+                  },
+                  "id": 144,
+                  "nodeType": "ExpressionStatement",
+                  "src": "249:46:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 146,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 139,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 138,
+                  "name": "_administratorProvider",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 146,
+                  "src": "186:44:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                    "typeString": "contract AdministratorProvider"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 137,
+                    "name": "AdministratorProvider",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 213,
+                    "src": "186:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                      "typeString": "contract AdministratorProvider"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "185:46:1"
+            },
+            "returnParameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "239:0:1"
+            },
+            "scope": 164,
+            "src": "174:128:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 162,
+              "nodeType": "Block",
+              "src": "357:136:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 155,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 913,
+                              "src": "439:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 156,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "439:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 151,
+                                "name": "administratorProvider",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 136,
+                                "src": "375:21:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_AdministratorProvider_$213",
+                                  "typeString": "contract AdministratorProvider"
+                                }
+                              },
+                              "id": 152,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "administratorCollection",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 171,
+                              "src": "375:45:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_contract$_AdministratorInterface_$19_$",
+                                "typeString": "function () view external returns (contract AdministratorInterface)"
+                              }
+                            },
+                            "id": 153,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "375:47:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AdministratorInterface_$19",
+                              "typeString": "contract AdministratorInterface"
+                            }
+                          },
+                          "id": 154,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "isAdministrator",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 18,
+                          "src": "375:63:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 157,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "375:75:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "556e617574686f72697a65642041636365737321",
+                        "id": 158,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "452:22:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_760a1e64bec12b2abe45c38b6154155372bcdc8e8a725e7d20a01af9513a7e5a",
+                          "typeString": "literal_string \"Unauthorized Access!\""
+                        },
+                        "value": "Unauthorized Access!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_760a1e64bec12b2abe45c38b6154155372bcdc8e8a725e7d20a01af9513a7e5a",
+                          "typeString": "literal_string \"Unauthorized Access!\""
+                        }
+                      ],
+                      "id": 150,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        916,
+                        917
+                      ],
+                      "referencedDeclaration": 917,
+                      "src": "367:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 159,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "367:108:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 160,
+                  "nodeType": "ExpressionStatement",
+                  "src": "367:108:1"
+                },
+                {
+                  "id": 161,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "485:1:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 163,
+            "name": "onlyAdministrator",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 149,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 148,
+                  "name": "_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 163,
+                  "src": "339:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 147,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:18:1"
+            },
+            "src": "312:181:1",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 165,
+        "src": "75:420:1"
+      }
+    ],
+    "src": "0:495:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-07-25T22:58:07.210Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

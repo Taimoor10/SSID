@@ -1,0 +1,41 @@
+{
+  "name": "credentials",
+  "version": "0.1.0",
+  "description": "Blockchain-based implementation to manage Issuers, Certificates and Claims. ",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "git pull && npm install",
+    "compile": "npx truffle compile",
+    "evm": "npx ganache-cli -i 17 -m \"ssid e2tech credentials corona-testing compliance degov bp\"",
+    "deploy": "node deploy.js",
+    "start": "npx nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.obcc.de/hassaan/credentials.git"
+  },
+  "keywords": [
+    "DEGOV",
+    "ClassRoom"
+  ],
+  "author": "hassaan",
+  "license": "ISC",
+  "devDependencies": {
+    "ganache-cli": "^6.12.0",
+    "jest": "^25.5.4",
+    "jest-cli": "^25.5.4",
+    "nodemon": "^2.0.6",
+    "truffle": "^5.1.54"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "eccrypto": "^1.1.5",
+    "express": "^4.17.1",
+    "qrcode-terminal": "^0.12.0",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-util": "^0.15.1",
+    "web3": "^1.3.0",
+    "ws": "^7.4.0"
+  }
+}

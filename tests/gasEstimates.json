@@ -1,0 +1,9 @@
+{
+    "Administrator": {
+        "grant": 50000,
+        "revoke": 50000
+    },
+    "User": {
+        "signUp": 150000
+    }
+}

@@ -1,0 +1,5 @@
+//Will install the required dependencies
+npm install
+
+//Will execute EVM with a set of accounts based on the mnemonic
+npx ganache-cli -i 17 -m "ssid e2tech credentials corona-testing compliance degov bp"

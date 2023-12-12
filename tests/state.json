@@ -1,0 +1,27 @@
+{
+    "administrators": [
+        {
+            "address": "0x3E56B349026cFeA6C594612C03455f6a8D104Bb1",
+            "publicKey": "0x82bbe1fca2c9dea13ef4247f09d2818e6d80515acd28333535f0fa0a4f24de38",
+            "privateKey": "0x2b1a486d69781775a8b8f688862c8ec8f66be6d036a2bd0cb1c5c80c2cd76e39"
+        },
+        {
+            "address": "0x4Ac41f8E5881eA02AF3450DEb911fC2c2071dCCA",
+            "privateKey": "0xfcc5bdd038aed396a5de7244a0362a469dc0272370a381731a31900a6a172459"
+        }
+    ],
+    "accounts": [
+        {
+            "address": "0xB69aEc874cc75181aE386a3d7Db3f8B7e10f30e2",
+            "privateKey": "0x5a5a28d76f5d752d654f49a95d46e53c4a8bf0c35a35c83041a761d6e6ef616a"
+        },
+        {
+            "address": "0xc3BB39e58164168D3Fb5265D0DC6B42916D00545",
+            "privateKey": "0x106b9560e602041b2c56cd80bf68ef5a94915913818d9cd0422d1654571443b3"
+        },
+        {
+            "address": "0x8C4946DA06d5cdD1d0729fEB1a19C4A9044080E5",
+            "privateKey": "0xbbffe451a086c451140410075001516294a41b28228a07998ca07d8d2e9c47a8"
+        }
+    ]
+}
